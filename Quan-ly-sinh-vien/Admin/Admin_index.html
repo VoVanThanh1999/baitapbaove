@@ -110,14 +110,13 @@
 				<button onclick="addStudent()"  class="btn text-dark col-md-12" href="#" style="font-weight: 500;"><i class="fa fa-cogs" ></i>Setup students</button>
 				<br>
 				<br>
-				<div class="add-student">
-					<a  onclick="addStudentHTML()" class="btn text-success " href="#"><i class="fa fa-plus-square" style="color: #34ebe5;"></i>Add</a>
+				<div class="add-student" style="display: none">
+					<a  onclick="addStudentHTML()" class="btn text-secondary" href="#"><i class="fa fa-plus-square" ></i>Thêm Sinh Viên</a>
 					<br>
 					<br>
-					<a onclick="editStudentHTML()" class="btn text-success " href="#"><i class="fa fa-eraser" style="color: #FFFF33;" ></i>Edit</a>
+					<a onclick="editStudentHTML()" class="btn text-secondary " href="#"><i class="fa fa-eraser"  ></i>Chỉnh Sửa Sinh Viên</a>
 					<br>
-					<br>
-					<a class="btn text-success" href="#"><i class="fa fa-trash" style="color: #0af034; "></i>Delete</a>
+					
 				</div>
 				<br>
 				<br>
@@ -142,13 +141,22 @@
 	
 </body>
 <script type="text/javascript">
+	var flag = true;
 	function addStudent() {
 		debugger;
 		// body... 
-		$(".add-student").css("display", "block");
+		if ($(".add-student").hide()) {
+			// statement
+			$(".add-student").show();
+			return;
+		}
+		if($(".add-student").show()){
+			$(".add-student").hide()
+			return;
+		}
+		
 	}
 	function addSchelude() {
-		debugger;
 		// body... 
 		$(".add-schelude").css("display", "block");
 	}
@@ -196,8 +204,8 @@
 									<input type="text" name="" id="dienThoai" class="form-control">
 									<label for="ngayVaoDoan">Ngày vào đoàn:</label>
 									<input type="text" name="" id="ngayVaoDoan" class="form-control">
-									<label for="nghanhHoc">Nghành học:</label>
-									<input type="text" name="" id="nghanhHoc" class="form-control">
+									<label for="nganhHoc">Nghành học:</label>
+									<input type="text" name="" id="nganhHoc" class="form-control">
 									
 								</div>
 							</div>
@@ -235,7 +243,7 @@
 		var students = JSON.parse(localStorage.getItem("localStorageStudent"));
 		document.getElementById('conTentHTML').innerHTML = `
 			<div class="container-fluid">
-		<div class="container-fluid">
+		<div class="container-fluid" id="updateBody">
 			<table class="table table-hover">
 				<thead class="table-danger"> 
 					<tr>
