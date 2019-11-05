@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- Select Desgin -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- FontGoogle -->
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <style type="text/css">
+        	/*/*/*
+/*Admin_index*/
+
+.container .page_menutop .img{
+	width: 40px;
+	height: 40px;
+	/*background: red;*/
+	border-radius: 50%;
+	float: left;
+}
+.container .page_menutop .img img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	float: left;
+}
+.container .page_menutop .img img{
+	width:100%;
+	height:100%;
+}
+.container-fluid .menu_body a{
+	padding-right: 50px;
+}
+.container-fluid .menu_body i{
+	/*color: black;*/
+	transition: 1s;
+	padding-right: 50px;
+}
+.add-student{
+	transition: 1s;
+	display: none;
+}
+.add-schelude{
+	transition: 1s;
+	display: none;
+}
+.container-fluid .menu_right{
+	width: 79%;
+    margin-left: 20%;
+    margin-top: 90px;
+}
+.menu-left{
+   	position: fixed;
+    z-index: 1;
+}
+.container{
+	position: fixed;
+   	
+    z-index: 2;
+    float: right;
+}
+
+.container-fluid .table thead th{
+        		text-align: center;
+        		color: white;
+        	}
+        	.container-fluid .table tbody td{
+        		text-align: center;
+        		/*color: white;*/
+        	}
+        </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="page_menutop">
+				<div class="p float-right" style="margin-top: 10px;">
+					<p style="padding-left: 10px;">Mr: Việt</p>
+				</div>
+				<div class="img float-right" style="margin-left: 20px;">
+					<img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/8_avatar-512.png">
+				</div>
+				
+				<a href="#"><i class="far fa-bell float-right" style="padding-left: 20px; padding-top: 10px; color: black"></i></a>
+				<a href="#"><img style="width: 20px; padding-top: 10px;" class="img-fluid float-right" src="https://icon-library.net/images/message-icon-png/message-icon-png-25.jpg"></a>
+			</div>
+		</div>
+	</div>
+		
+	<div class="container-fluid">
+		<div class="menu-left" style="width: 20%;">
+			<div class="menu_header bg-success">
+				<div class="menu_img">
+					<img src="http://sinhvien.donga.edu.vn/images/logo1.png">
+				</div>
+			</div>
+			<hr>
+			<div class="menu_body">
+				<button onclick="addStudent()"  class="btn text-dark col-md-12" href="#" style="font-weight: 500;"><i class="fa fa-cogs" ></i>Setup students</button>
+				<br>
+				<br>
+				<div class="add-student">
+					<a  onclick="addStudentHTML()" class="btn text-success " href="#"><i class="fa fa-plus-square" style="color: #34ebe5;"></i>Add</a>
+					<br>
+					<br>
+					<a onclick="editStudentHTML()" class="btn text-success " href="#"><i class="fa fa-eraser" style="color: #FFFF33;" ></i>Edit</a>
+					<br>
+					<br>
+					<a class="btn text-success" href="#"><i class="fa fa-trash" style="color: #0af034; "></i>Delete</a>
+				</div>
+				<br>
+				<br>
+				<button onclick="addSchelude()" class="btn text-dark col-md-12" href="#" style="font-weight: 500;"><i class="fa fa-calendar" style="color: #37bfbd; "></i>Setup the schelude</button>
+				<br>
+				<br>
+				<div class="add-schelude">
+					<a onclick="addScheludeHTML()" class="btn text-success" href="#"><i class="fa fa-plus-square" style="color: #fa0f46; "></i>Add</a>
+					<br>
+					<br>
+					<a onclick="editScheludeHTML()" class="btn text-success" href="#"><i class="fa fa-eraser" style="color: #f0aa07;"></i>Edit</a>
+					<br>
+					<br>
+					<a onclick="deleteScheludeHTML()" class="btn text-success" href="#"><i class="fa fa-trash" style="color:#be07f0;"></i>Delete</a>
+				</div>
+			</div>
+		</div>
+		<div class="menu_right  float-right" id="conTentHTML">
+			
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	function addStudent() {
+		debugger;
+		// body... 
+		$(".add-student").css("display", "block");
+	}
+	function addSchelude() {
+		debugger;
+		// body... 
+		$(".add-schelude").css("display", "block");
+	}
+
+	function addStudentHTML(){
+		// body... 
+		debugger;
+		document.getElementById("conTentHTML").innerHTML = `
+			<div class="container-fluid">
+				<div class="container-fluid">
+					<h3 class="text-center" style="color: #24d639; letter-spacing: 5px;"><b>NHẬP THÔNG TIN SINH VIÊN</b></h3>
+					<br>
+					<form>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="iD">IDSV:</label>
+									<input type="text" name="" id="iD" class="form-control">
+									<label for="tenSinhVien">Họ và tên SV:</label>
+									<input type="text" name="" id="tenSinhVien" class="form-control">
+									<label for="matKhau">Mật khẩu:</label>
+									<input type="text" name="" id="matKhau" class="form-control">
+									<label for="bac">Bậc:</label>
+									<input type="text" name="" id="bac" class="form-control">
+									<label for="tenLop">Tên lớp:</label>
+									<input type="text" name="" id="tenLop" class="form-control">
+									<label for="CMND">CMND:</label>
+									<input type="text" name="" id="CMND" class="form-control">
+									<label for="noiCap">Nơi cấp:</label>
+									<input type="text" name="" id="noiCap" class="form-control">
+									
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">	
+									<label for="khoaHoc">Khóa học:</label>
+									<input type="text" name="" id="khoaHoc" class="form-control">
+									<label for="Email">Email:</label>
+									<input type="text" name="" id="email" class="form-control">
+									<label for="diaChi">Địa chỉ nhà trọ:</label>
+									<input type="text" name="" id="diaChi" class="form-control">
+									<label for="tonGiao">Tôn giáo:</label>
+									<input type="text" name="" id="tonGiao" class="form-control">
+									<label for="dienThoai">Điện thoại:</label>
+									<input type="text" name="" id="dienThoai" class="form-control">
+									<label for="ngayVaoDoan">Ngày vào đoàn:</label>
+									<input type="text" name="" id="ngayVaoDoan" class="form-control">
+									<label for="nghanhHoc">Nghành học:</label>
+									<input type="text" name="" id="nghanhHoc" class="form-control">
+									
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="ngayVaoDang">Ngày vào Đảng:</label>
+									<input type="text" name="" id="ngayVaoDang" class="form-control">
+									<label for="hoTenCha">Họ tên cha:</label>
+									<input type="text" name="" id="hoTenCha" class="form-control">
+									<label for="ngheNghiepCha">Nghề nghiệp cha:</label>
+									<input type="text" name="" id="ngheNghiepCha" class="form-control">
+									<label for="hoTenMe">Họ tên mẹ:</label>
+									<input type="text" name="" id="hoTenMe" class="form-control">
+									<label for="ngheNghiepMe">Nghề nghiệp mẹ:</label>
+									<input type="text" name="" id="ngheNghiepMe" class="form-control">
+									<label for="hoKhau">Hộ khẩu:</label>
+									<input type="text" name="" id="hoKhau" class="form-control">
+									<label for="sdtNha">Số điện thoại nhà:</label>
+									<input type="text" name="" id="sdtNha" class="form-control">
+									
+						</div>
+					</div>
+				</div>
+			</form>
+			<button class="btn btn-success col-md-4" onclick="addNewStudent()" id="newStudent" style="float: right;" >TẠO</button>
+		</div>
+	</div>
+
+		`
+
+	}
+	
+	function editStudentHTML() {
+		// body... 
+		var students = JSON.parse(localStorage.getItem("localStorageStudent"));
+		document.getElementById('conTentHTML').innerHTML = `
+			<div class="container-fluid">
+		<div class="container-fluid">
+			<table class="table table-hover">
+				<thead class="table-danger"> 
+					<tr>
+						<th>ID Sinh viên</th>
+						<th>Họ và tên</th>
+						<th>Mật Khẩu</th>
+						<th>Email</th>
+						<th>Tên Lớp</th>
+						<th>Nghành học</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="loadUserID">
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+		`
+		for (var i = 0; i < students.length; i++) {
+			loadUserID.innerHTML +=`
+				<tr id="">
+					<th>${students[i].idSinhVien}</th>
+					<th>${students[i].tenSinhVien}</th>
+					<th>${students[i].matKhau}</th>
+					<th>${students[i].email}</th>
+					<th>${students[i].tenLop}</th>
+					<th>${students[i].nganhHoc}</th>
+					<th><button onclick="editStudent(${i})" class="btn btn-danger">Sửa</button></th>
+					<th><button onclick="deleteStudent(${i})" class="btn btn-primary">Xóa</button></th>
+				</tr>
+			`
+		}
+	}
+	function addScheludeHTML(){
+		// body... 
+		document.getElementById('conTentHTML').innerHTML = `
+			<div class="container-fluid">
+				<table class="table table-bordered">
+					<thead class="bg-success">
+						<tr>
+							<th>Buổi</th>
+							<th>Thứ 2</th>
+							<th>Thứ 3</th>
+							<th>Thứ 4</th>
+							<th>Thứ 5</thd>
+							<th>Thứ 6</th>
+							<th>Thứ 7</th>
+							<th>Chủ Nhật</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Sáng</td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td>Chiều</td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+	</div>
+		`
+	}
+	function editScheludeHTML() {
+		// body... 
+		document.getElementById('conTentHTML').innerHTML = `
+			<div class="container-fluid">
+		<table class="table table-bordered">
+			<thead class="bg-success">
+				<tr>
+					<th>Buổi</th>
+					<th>Thứ 2</th>
+					<th>Thứ 3</th>
+					<th>Thứ 4</th>
+					<th>Thứ 5</thd>
+					<th>Thứ 6</th>
+					<th>Thứ 7</th>
+					<th>Chủ Nhật</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sáng</td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td>Chiều</td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		`
+	}
+	function deleteScheludeHTML()  {
+		// body... 
+		document.getElementById('conTentHTML').innerHTML = `
+			<div class="container-fluid">
+		<table class="table table-bordered">
+			<thead class="bg-success">
+				<tr>
+					<th>Buổi</th>
+					<th>Thứ 2</th>
+					<th>Thứ 3</th>
+					<th>Thứ 4</th>
+					<th>Thứ 5</thd>
+					<th>Thứ 6</th>
+					<th>Thứ 7</th>
+					<th>Chủ Nhật</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sáng</td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td>Chiều</td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td><button onclick="addSchelude()" class="btn btn-success">Xóa lịch học</button></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+		`
+	}
+
+</script>
+</script>
+<script type="text/javascript" src="admin.js"></script>
+</html>

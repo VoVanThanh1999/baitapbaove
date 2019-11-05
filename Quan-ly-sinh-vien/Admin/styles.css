@@ -1,0 +1,16 @@
+/*Admin_Login*/		
+.container-fluid .container .page_header .row .col-md-6 h3{
+	color: white;
+	text-align: center;
+	padding-top: 25px;
+	font-family:"open sans" ;
+	font-size: 20px;
+}	
+.container .page_body .row h3{
+	font-family: "open sans";
+}
+.container .page_body .row{
+	border: 1px solid;
+  	padding: 10px;
+  	box-shadow: 0px 10px 5px 0px #888888;
+}

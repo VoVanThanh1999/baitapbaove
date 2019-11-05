@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.image-hover{
+			width: 100%;
+			height: 100%;
+		}
+		p.text_note {
+        background: green;
+    	color: white;
+    	font-weight: bold;
+    	width: 25%;
+    	border-radius: 4px;
+	}
+	h5{
+		font-size: 15px;
+		border-radius: 4px;
+	}
+	p.small {
+    line-height: 150%;
+    font-size: 14px;
+	}
+	.image-hover{
+
+	}
+	/*img:hover{
+		transition: 1s;
+		transform: scale(1.2);
+	}*/
+
+
+}
+.form-group {
+    margin-top:30px;
+    width: 450px;
+}
+input.form-control {
+    height: 34px;
+}
+a{
+	text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 15px;
+}
+p.text-center {
+    margin-top: 18px;
+}
+.container-fluid .container .page_header .row .col-md-6 h3{
+	color: white;
+	text-align: center;
+	padding-top: 25px;
+	font-family:"open sans" ;
+	font-size: 20px;
+}
+	</style>
+
+</head>
+
+<body>
+	<div class="container-fluid bg-success">
+			<div class="container bg-success">
+				<div class="page_header">
+					<div class="row">
+						<div class="col-md-6">
+							<img src="http://sinhvien.donga.edu.vn/images/logo1.png" style="margin-left: 30%;" id="logo">
+						</div>
+						<div class="col-md-6" style="">
+							<h3>TRƯỜNG ĐẠI HỌC ĐÔNG Á</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<br>
+	<div class="container-fluid">
+		<div class="container-fluid">
+			<div class="image w-100">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="image-hover">
+							<img src="http://sinhvien.donga.edu.vn/primages/5D3_0194.jpg" class="img-fluid">
+							<p class="text-center"><a href="">Sự kiện "hot" diễn ra</a></p>
+						</div>
+
+					</div>
+					<div class="col-md-3">
+						<div class="image-hover">
+							<img src="http://sinhvien.donga.edu.vn/primages/MG_7206.jpg" class="img-fluid">
+							<p class="text-center"><a href="">Hoạt động SV nổi bật</a></p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="image-hover">
+							<img src="http://sinhvien.donga.edu.vn/primages/MG_0235.jpg" class="img-fluid">
+							<p class="text-center"><a href="">Hợp tác quốc tế trong nước</a></p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="image-hover">
+							<img src="http://sinhvien.donga.edu.vn/primages/Yokohama_sv.jpg" class="img-fluid">
+							<p class="text-center"><a href="">Sinh viên Đông Á làm việc tại nước ngoài</a></p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 40px; padding: 50px;">
+			<div class="row">
+				<div class="col-md-6">
+					<h5>
+						<span class="lable label-danger" style="background-color:#025215;color:white; padding: 0 8px 2px 8px;;border-radius: 3px">Sinh viên chú ý</span>
+					</h5>
+					<p class="small">Sinh viên truy cập ngày 2 lần để xem thông báo, 
+            thời khóa biểu học tập</p>
+            		<p class="small"> 1. Sinh viên không được cho nguời khác mượn ID và 
+            Password để truy cập hệ thống</p>
+            		<p class="small"> 2. Sinh viên không truy cập được có thể liên lạc 
+            Thầy Sơn theo email : sondm@donga.edu.vn hoặc trực tiếp tới phòng A408 để gặp 
+            thầy hoặc gọi theo SĐT: 0511.222.1124 - máy nhánh: 139.</p>
+            		<p class="small"> 3. Sinh viên không thấy được lịch học tập có thể gọi theo SĐT: 0511.222.1124 - máy nhánh: 104 để gặp thầy/cô ở phòng Đào tạo để biết thông tin chi tiết.</p>
+				</div>
+				<div class="col-md-6">
+					<h4 style="font-weight: bold;color: #025215; margin-left: 28%;">Đăng nhập</h4>
+					<form>
+						<div class="form-group">
+							<input type="text" name="id" class="form-control" placeholder="IDSV" >
+							<br/>
+							<input type="password" name="password" class="pass form-control" placeholder="Password">
+							<br/>
+							<button type="submit" class="btn form-control btn-primary btn-lg btn-block" style="height: 46px;height:46px; font-size: 20px; background: #025215;">Đăng nhập</button>
+						</div>
+					</form>
+					<p class="small" style="color:Red">
+                        <i class="fa fa-warning"></i> Nếu lần đầu tiên, Em hãy nhập ngày tháng năm sinh vào ô Password theo mẫu dd/mm/yyyy (10/07/1969)
+                    </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-success" style="height: 70px">
+			<div class="container">
+				<p class="text-center text-white" style="padding-top: 20px">©2016 Trung tâm ICT Trường Đại học Đông Á</p>
+			</div>
+		</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+</html>
