@@ -1,3 +1,4 @@
+
 var message;
 var messages = [];
 
@@ -10,6 +11,7 @@ function checkUsername(argument) {
 	for (var i = 0; i <students.length; i++) {
 		var count = 0;
 		if (students[i].idSinhVien == idsinhvien  && students[i].matKhau==idpasssword) {
+
 			// PAGE INDEX
 			$("#bodyUser").html(
 				`
@@ -370,7 +372,10 @@ function checkUsername(argument) {
 			$(".statusLogin").html(
 				`Login  thất bại`	
 			);
-
+			count +=1;
+		}
+		if (count == 0) {
+			
 		}
 	}
 
