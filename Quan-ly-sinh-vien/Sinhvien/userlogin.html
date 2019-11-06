@@ -128,11 +128,11 @@ p.text-center {
 					<h4 style="font-weight: bold;color: #025215; margin-left: 28%;">Đăng nhập</h4>
 					<form>
 						<div class="form-group">
-							<input type="text" name="id" class="form-control" placeholder="IDSV" >
+							<input type="text" name="id" class="form-control" placeholder="IDSV" id="idsinhvien" >
 							<br/>
-							<input type="password" name="password" class="pass form-control" placeholder="Password">
+							<input type="password" name="password" class="pass form-control" placeholder="Password" id="idpassword">
 							<br/>
-							<button type="submit" class="btn form-control btn-primary btn-lg btn-block" style="height: 46px;height:46px; font-size: 20px; background: #025215;">Đăng nhập</button>
+							<button  class="btn form-control btn-primary btn-lg btn-block" onclick="checkUsername()" style="height: 46px;height:46px; font-size: 20px; background: #025215;" type="button">Đăng nhập</button>
 						</div>
 					</form>
 					<p class="small" style="color:Red">
@@ -148,6 +148,7 @@ p.text-center {
 			</div>
 		</div>
 </body>
+<script src="login.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
