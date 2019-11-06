@@ -283,50 +283,132 @@
 	function addScheludeHTML(){
 		// body... 
 		document.getElementById('conTentHTML').innerHTML = `
-			<div class="container-fluid">
-				<table class="table table-bordered">
-					<thead class="bg-success">
-						<tr>
-							<th>Buổi</th>
-							<th>Thứ 2</th>
-							<th>Thứ 3</th>
-							<th>Thứ 4</th>
-							<th>Thứ 5</thd>
-							<th>Thứ 6</th>
-							<th>Thứ 7</th>
-							<th>Chủ Nhật</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Sáng</td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td></td>
-						</tr>
-					</tbody>
-					<tbody>
-						<tr>
-							<td>Chiều</td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td><button onclick="addSchelude()" class="btn btn-success">Thêm lịch học</button></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
+		<div class="container-fluid">
+		<table class="table table-bordered">
+			<thead class="bg-success">
+				<tr>
+					<th>Buổi</th>
+					<th>Thứ 2</th>
+					<th>Thứ 3</th>
+					<th>Thứ 4</th>
+					<th>Thứ 5</th>
+					<th>Thứ 6</th>
+					<th>Thứ 7</th>
+					<th>Chủ Nhật</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sáng</td>
+					<td>
+						<div class="form-group">
+							<input type="" name=""  class="form-control sangThu2" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name=""  class="form-control sangThu3" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control sangThu4" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control sangThu5" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control sangThu6" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control sangThu7" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td>Chiều</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu2" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu3" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu4" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu5" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu6" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="" name="" class="form-control chieuThu7" placeholder="Thêm lịch học">
+						</div>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<div><button type="button" class="btn form-control btn-success" id="themLichHoc"> Thêm lịch học</button></div>
 	</div>
 		`
+		$('#themLichHoc').click(function(){
+	debugger;
+	var sangThu2 = $(".sangThu2").val;
+	var sangThu3 = $(".sangThu3").val();
+	var sangThu4 = $(".sangThu4").val();
+	var sangThu5 = $(".sangThu5").val();
+	var sangThu6 = $(".sangThu6").val();
+	var sangThu7 = $(".sangThu7").val();
+	var chieuThu2 = $(".chieuThu2").val();
+	var chieuThu3 = $(".chieuThu3").val();
+	var chieuThu4 = $(".chieuThu4").val();
+	var chieuThu5 = $(".chieuThu5").val();
+	var chieuThu6 = $(".chieuThu6").val();
+	var chieuThu7 = $(".chieuThu7").val();
+
+	var schedule = {
+		sangThu2:sangThu2,
+		sangThu3:sangThu3,
+		sangThu4:sangThu4,
+		sangThu5:sangThu5,
+		sangThu6:sangThu6,
+		sangThu7:sangThu7,
+		chieuThu2:chieuThu2,
+		chieuThu3:chieuThu3,
+		chieuThu4:chieuThu4,
+		chieuThu5:chieuThu5,
+		chieuThu6:chieuThu6,
+		chieuThu7:chieuThu7
+	}
+	localStorage.setItem('localStorageSchedule', JSON.stringify(schedule));
+	
+});
 	}
 	function editScheludeHTML() {
 		// body... 
+		let	schedule =JSON.parse(localStorage.getItem("localStorageSchedule"));
 		document.getElementById('conTentHTML').innerHTML = `
 			<div class="container-fluid">
 		<table class="table table-bordered">
@@ -342,33 +424,63 @@
 					<th>Chủ Nhật</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody  id="updateSchedule">
 				<tr>
 					<td>Sáng</td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td>${schedule.sangThu2}</td>
+					<td>${schedule.sangThu3}</td>
+					<td>${schedule.sangThu4}</td>
+					<td>${schedule.sangThu5}</td>
+					<td>${schedule.sangThu6}</td>
+					<td>${schedule.sangThu7}</td>
 					<td></td>
 				</tr>
-			</tbody>
-			<tbody>
-				<tr>
+				<tr >
 					<td>Chiều</td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
-					<td><button onclick="addSchelude()" class="btn btn-success">Sửa lịch học</button></td>
+					<td>${schedule.chieuThu2}</td>
+					<td>${schedule.chieuThu3}</td>
+					<td>${schedule.chieuThu4}</td>
+					<td>${schedule.chieuThu5}</td>
+					<td>${schedule.chieuThu6}</td>
+					<td>${schedule.chieuThu7}</td>
 					<td></td>
 				</tr>
 			</tbody>
+			
 		</table>
+		<button class="btn btn-success float-right" id="updateLichHoc">Cập nhật lịch học</button>
 	</div>
 		`
+		$("#updateLichHoc").click(function(){
+			debugger;
+			updateSchedule.html +=`
+				<tr>
+					<td>Sáng</td>
+					<td><input type="text" class="form-control"	></td>
+					<td>${schedule.sangThu3}</td>
+					<td>${schedule.sangThu4}</td>
+					<td>${schedule.sangThu5}</td>
+					<td>${schedule.sangThu6}</td>
+					<td>${schedule.sangThu7}</td>
+					<td></td>
+				</tr>
+				<tr >
+					<td>Chiều</td>
+					<td>${schedule.chieuThu2}</td>
+					<td>${schedule.chieuThu3}</td>
+					<td>${schedule.chieuThu4}</td>
+					<td>${schedule.chieuThu5}</td>
+					<td>${schedule.chieuThu6}</td>
+					<td>${schedule.chieuThu7}</td>
+					<td></td>
+				</tr>
+
+
+
+			`;
+		});
+
+
 	}
 	function deleteScheludeHTML()  {
 		// body... 
