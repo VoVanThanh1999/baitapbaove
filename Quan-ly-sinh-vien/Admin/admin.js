@@ -171,17 +171,7 @@ function updateStudent(i){
 	students[i] = student;
 	localStorage.setItem('localStorageStudent', JSON.stringify(students));
 	$("#updateBody").html(``);
+
 	alert('update thành công')
-}
-// get message
-getMessage();
-function getMessage(){
-	let	messages =JSON.parse(localStorage.getItem("localStorageMessage"));
-	console.log(messages.length);
-	$("#lengthMessage").html(`
-			${messages.length}
-	`
-	);
-
-
+	
 }

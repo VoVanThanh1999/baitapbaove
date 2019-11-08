@@ -11,7 +11,7 @@ function checkUsername(argument) {
 	for (var i = 0; i <students.length; i++) {
 		var count = 0;
 		if (students[i].idSinhVien == idsinhvien  && students[i].matKhau==idpasssword) {
-
+			// thông tin cá nhân
 			// PAGE INDEX
 			$("#bodyUser").html(
 				`
@@ -67,10 +67,15 @@ function checkUsername(argument) {
 						   	Góc riêng sinh viên
 						  </button>
 						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
-						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
-						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
-						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						    <button class="dropdown-item" type="button" onclick="thongTinCaNhan(${i})">Thông tin cá nhân</button>
+						    <button class="dropdown-item" type="button" >Thông tin sinh viên lớp</button>
+						    <button class="dropdown-item" type="button">Kết quả học tập</button>
+						    <button class="dropdown-item" type="button">Điểm rèn luyện</button>
+						    <button class="dropdown-item" type="button">Nhận xét rèn luyện</button>
+						    <button class="dropdown-item" type="button">Đánh giá chuẩn đầu ra</button>
+						    <button class="dropdown-item" type="button">Học phí lệ phí</button>
+						    <button class="dropdown-item" type="button">Đăng ký học lại</button>
+						    <button class="dropdown-item" type="button">Thông báo tốt nghiệp</button>
 						  </div>
 						</div>
 						<div class="dropdown">
@@ -183,10 +188,16 @@ function checkUsername(argument) {
 					    <a class="btn btn-danger" id="heplStudent" href="#" style="width:100%;font-weight:bold">Ngay lúc này, em cần nhà trường hỗ trợ về việc gì nào?</a>
 					</footer>
 
-
 					`
 
 				);
+				$("#thongTinCaNhan").click(function(){
+					debugger;
+					
+				});		
+				
+			
+			
 				// Page userhepl
 				$("#heplStudent").click(function(){
 					$("#bodyUser").html(
@@ -380,4 +391,203 @@ function checkUsername(argument) {
 	}
 
 }
-		
+function thongTinCaNhan (i) {
+		// body... 
+		let	students =JSON.parse(localStorage.getItem("localStorageStudent"));
+		bodyUser.innerHTML =`
+					<div class="container-fluid " style="background: #025215; height: 40px;">
+						<div class="nav">
+							<div class="col-md-4">
+								<p class="text-white " style="font-size: 18px; font-weight: 500; padding-top: 5px;" >UDA Student</p>
+							</div>
+							<div class="col-md-6" style="margin-left: 135px;">
+								<div class="date radirus">
+									
+								</div>
+								<div class="month radirus">
+									
+								</div>
+								<div class="year radirus">
+									
+								</div>
+								<div class="avatar" >
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<nav class="container-fluid">
+					<!-- Example split danger button -->
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Thông tin thông báo
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						  </div>
+						</div>
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Đăng ký học phần
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Đăng ký kế hoặc đạt chuẩn đầu ra</button>
+						    <button class="dropdown-item" type="button">Đăng ký học phần</button>
+						    <button class="dropdown-item" type="button">Xem lịch giảng dậy</button>
+						    <button class="dropdown-item" type="button">Kế hoặc toàn khóa</button>
+						    <button class="dropdown-item" type="button">Kế hoặc năm học</button>
+						  </div>
+						</div>
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   	Góc riêng sinh viên
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						  </div>
+						</div>
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   	Sinh viên nhà trường
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						  </div>
+						</div>
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   	Công tác sinh viên
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						  </div>
+						</div>
+						<div class="dropdown">
+						  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   	Khảo sát
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+						  </div>
+						</div>
+					</nav>
+					<!-- --------------------------------------------------------BODY--------------- -->
+
+					<div class="container-fluid body">
+							<div class="hssv" style="width: 70% ;margin-top: 10px; float:left;" >
+								<p id="p_hssv">
+									<img src="http://sinhvien.donga.edu.vn/images/onlyhoa.png" id="iconhssv">
+									Hồ sơ sinh viên
+								</p>
+							</div>
+							<div class="suatt" style="width: 30%;margin-top: 10px; float: left;">
+								<p id="p_suatt">Sửa thông tin</p>
+							</div>
+							<div class="container">
+								<div class="row profile">
+									<div class="col-sm-3">
+										<img src="" id="img_ttht">
+										<p id="idsv">IDSV: '${students[i].idSinhVien}'</p>
+										<p id="name">Họ và tên: '${students[i].tenSinhVien}'</p>
+										<p id="sex">Phái: Nam</p>
+										<p id="datebirth">Ngày sinh : '${students[i].tenSinhVien}'</p>
+										<p id="born">Nơi sinh '${students[i].hoKhau}'</p>
+										<p id="dt">Dân tộc '${students[i].hoKhau}'</p>
+									</div>
+									<div class="col-sm-9">
+										<dl class="dl_httt">
+										<dt>Bậc : ${students[i].bac}</dt>
+										<dd></dd>
+
+										<dt>Khóa học : ${students[i].khoaHoc}</dt>
+										<dd></dd>
+
+										<dt>Ngành học : ${students[i].nganhHoc}</dt>
+										<dd></dd>
+
+										<dt>Tên lớp : ${students[i].tenLop}</dt>
+										<dd></dd>
+
+										<dt>Số CMND ${students[i].CMND}</dt>
+										<dd></dd>
+
+										<dt>Ngày nơi cấp : ${students[i].noiCap}</dt>
+										<dd></dd>
+
+										<dt>Điện thoại : ${students[i].sdtNha}</dt>
+										<dd></dd>
+
+										<dt>Email : ${students[i].email} </dt>
+										<dd></dd>
+
+										<dt>Tôn giáo :${students[i].tonGiao} </dt>
+										<dd></dd>
+
+										<dt>Địa chỉ nhà trọ : ${students[i].diaChi} </dt>
+										<dd></dd>
+
+										<dt>Đoàn viên</dt>
+										<dd>
+											<input class="check-box" disabled="disabled" type="checkbox">
+										</dd>
+
+										<dt>Ngày vào Đoàn : ${students[i].ngayVaoDoan}</dt>
+										<dd></dd>
+
+										<dt>Đảng viên : ${students[i].ngayVaoDang}</dt>
+										<dd>
+											<input class="check-box" disabled="disabled" type="checkbox">
+										</dd>
+
+										<dt>Ngày vào Đảng : ${students[i].ngayVaoDang}</dt>
+										<dd></dd>
+
+										<dt>Họ tên Cha : ${students[i].hoTenCha}</dt>
+										<dd></dd>
+
+										<dt>Nghệ nghiệp Cha : ${students[i].ngheNghiepCha} </dt>
+										<dd></dd>
+
+										<dt>Họ tên Mẹ : ${students[i].hoTenMe}</dt>
+										<dd></dd>
+
+										<dt>Nghề nghiệp Mẹ : ${students[i].ngheNghiepMe}</dt>
+										<dd></dd>
+
+										<dt>Hộ khẩu : ${students[i].hoKhau}</dt>
+										<dd></dd>
+
+										<dt>Số điện thoại nhà : ${students[i].dienThoai}</dt>
+										<dd></dd>
+
+										<dt>Thành phần gia đình</dt>
+										<dd></dd>
+
+									</dl>
+									</div>
+								</div>
+							</div>
+					</div>
+					<footer class="footer fixed-bottom  navbar-border" >
+						<a class="btn text-white" style="width: 100%" href="#">Ngay lúc này, em cần nhà trường hỗ trợ về việc gì nào?</a>
+
+				</footer>	
+
+	`;				
+}
