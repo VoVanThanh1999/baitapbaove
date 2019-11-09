@@ -86,13 +86,13 @@
 		<div class="container">
 			<div class="page_menutop">
 				<div class="p float-right" style="margin-top: 10px;">
-					<p style="padding-left: 10px;">Ms:Thư</p>
+					<p style="padding-left: 10px;" id="adminName"></p>
 				</div>
 				<div class="img float-right" style="margin-left: 20px;">
 					<img src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/8_avatar-512.png">
 				</div>
 				
-				<a href="#" ><i class="far fa-bell float-right" style="padding-left: 20px; padding-top: 10px; color: black"><p id="lengthMessage"></p></i></a>
+				<a href="#" id="messageID"><i class="far fa-bell float-right" style="padding-left: 20px; padding-top: 10px; color: black"><p id="lengthMessage"></p></i></a>
 				<a href="#"><img style="width: 20px; padding-top: 10px;" class="img-fluid float-right" src="https://icon-library.net/images/message-icon-png/message-icon-png-25.jpg"></a>
 			</div>
 		</div>
@@ -160,7 +160,6 @@
 		// body... 
 		$(".add-schelude").css("display", "block");
 	}
-	// t k qua mon qua tT sao khong qua ?, để mai Thư lên trường T chỉ la2m task js là qua môn thôi, với lại mấy bài bữa giờ nửa. thôi pp nhé 
 	function addStudentHTML(){
 		// body... 
 		debugger;
@@ -479,9 +478,8 @@
 
 			`;
 		});
-
-
 	}
+
 	function deleteScheludeHTML()  {
 		// body... 
 		document.getElementById('conTentHTML').innerHTML = `

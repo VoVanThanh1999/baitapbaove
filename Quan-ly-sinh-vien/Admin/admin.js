@@ -1,6 +1,17 @@
 var loadUserEdit= document.getElementById('loadUserID');
 var student;
 var students =[];
+var admins = [
+	{
+		adminName:"vothanh",
+		password:"123456",
+	},
+	{
+		adminName:"tranthu",
+		password:"123456",
+	}
+
+]
 function addNewStudent (){
 	var idSinhVien = $("#iD").val();
 	var khoaHoc = $("#khoaHoc").val();
@@ -173,5 +184,74 @@ function updateStudent(i){
 	$("#updateBody").html(``);
 
 	alert('update thành công')
-	
+}
+loadlengthMessage();
+function loadlengthMessage() {
+	debugger;
+		let admin = localStorage.getItem("localStorageAdmin");
+		$("#adminName").html(
+				`${admin}`
+			);
+	// body... 
+	let	messages =JSON.parse(localStorage.getItem("localStorageMessage"));
+	$("#lengthMessage").html(
+		`${messages.length}`
+	);
+}
+
+$("#messageID").click(function(){
+	$("#conTentHTML").html(
+		`
+			<div class="container-fluid" style="color: black;">
+				<table class="table table-striped  table-hover ">
+				  <thead>
+				    <tr>
+				      <th class="text-secondary" scope="col">IDSV</th>
+				      <th class="text-secondary" scope="col">Ngày giờ gửi</th>
+				      <th class="text-secondary" scope="col">Nội dung thư</th>
+				    </tr>
+				  </thead>
+				  <tbody id="bodyMessage">
+				   
+				  </tbody>
+				</table>
+
+			</div>
+
+		`);
+	loadTRBodyMessage();
+	function loadTRBodyMessage(){
+
+		let messages = JSON.parse(localStorage.getItem("localStorageMessage"));
+		for (var i = 0 ; i < messages.length; i++) {
+			$("#bodyMessage").append(
+				`
+				<tr>
+				   <td> ${messages[i].idrequest} </td>
+				   <td> ${messages[i].day} - ${messages[i].month} - ${messages[i].year}</td>
+				   <td> <button class="btn btn-success" onclick="readMessage(${i})">Đọc thư</button> </td>
+				</tr>
+
+				`
+			);
+		}
+	}
+});
+// read thư
+function readMessage(i){
+
+	let messages = JSON.parse(localStorage.getItem("localStorageMessage"));	
+	$("#conTentHTML").html(
+	`
+		<div class="" >
+			<h4 >ID Sinh viên:</h4>	
+			<p>${messages[i].idrequest}</p>
+			<h4 class="float-none">Ngày tháng năm</h4>
+			<p> ${messages[i].day} - ${messages[i].month} - ${messages[i].year}</p>
+			<p class="h4">Nội dung</p>
+			<p>${messages[i].messgae}</p>
+		</div>
+
+	`	
+	);
 }

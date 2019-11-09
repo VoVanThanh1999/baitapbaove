@@ -71,9 +71,10 @@
 							</div>
 							<div class="form-group">
 								<label><input type="checkbox" name="">Lưu mật khẩu</label>
+								<p id="statusLogin"></p>
 							</div>
 							<div class="form-group">
-								<button onclick="dangNhap()" class="btn btn-success" style="width: 100%;">Login</button>
+								<button type="button" onclick="dangNhap()" class="btn btn-success" style="width: 100%;">Login</button>
 							</div>
 						</form>
 						
@@ -92,5 +93,28 @@
 		</div>
 
 	</div>
+	<script type="text/javascript" src="admin.js"></script>
+	<script type="text/javascript">
+		function dangNhap(argument) {
+			// body... 
+			var tenDangNhap = $("#tenDangNhap").val();
+			var matKhau = $("#matKhau").val();
+			var count = 0;
+			for(var i = 0; i<admins.length ; i++){
+				if(admins[i].adminName == tenDangNhap && admins[i].password == matKhau){
+					window.location.href = "Admin_index.html";
+					localStorage.setItem("localStorageAdmin", tenDangNhap);
+					count++;
+				}
+			}
+			if (count==0) {
+				$("#statusLogin").html(
+					`Login that bai`
+				);
+			}
+		}
+		
+
+	</script>
 </body>
 </html>

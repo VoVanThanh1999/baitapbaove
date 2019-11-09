@@ -45,7 +45,7 @@ function checkUsername(argument) {
 						  </button>
 						  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 						    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
-						    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+						    <button class="dropdown-item" type="button" id="viewSchedule">Xem lịch học tập</button>
 						    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
 						    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
 						  </div>
@@ -191,6 +191,156 @@ function checkUsername(argument) {
 					`
 
 				);
+				//xem lich hoc tap
+					// xem lịch hoc tập
+				$("#viewSchedule").click(function(){
+					let	schedule =JSON.parse(localStorage.getItem("localStorageSchedule"));	
+					console.log(schedule); 
+					$("#bodyUser").html(
+						`<div class="contaier-fluid" style="">
+							<div class="container-fluid " style="background: #025215; height: 40px;">
+								<div class="nav">
+									<div class="col-md-4">
+										<p class="text-white " style="font-size: 18px; font-weight: 500; padding-top: 5px;" >UDA Student</p>
+									</div>
+									<div class="col-md-6" style="margin-left: 135px;">
+										<div class="date radirus">
+											
+										</div>
+										<div class="month radirus">
+											
+										</div>
+										<div class="year radirus">
+											
+										</div>
+										<div class="avatar" >
+											
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<nav class="container-fluid">
+							<!-- Example split danger button -->
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Thông tin thông báo
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+								    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+								    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+								    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+								  </div>
+								</div>
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Đăng ký học phần
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Đăng ký kế hoặc đạt chuẩn đầu ra</button>
+								    <button class="dropdown-item" type="button">Đăng ký học phần</button>
+								    <button class="dropdown-item" type="button">Xem lịch giảng dậy</button>
+								    <button class="dropdown-item" type="button">Kế hoặc toàn khóa</button>
+								    <button class="dropdown-item" type="button">Kế hoặc năm học</button>
+								  </div>
+								</div>
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								   	Góc riêng sinh viên
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+								    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+								    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+								    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+								  </div>
+								</div>
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								   	Sinh viên nhà trường
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+								    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+								    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+								    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+								  </div>
+								</div>
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								   	Công tác sinh viên
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+								    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+								    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+								    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+								  </div>
+								</div>
+								<div class="dropdown">
+								  <button  class=" btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								   	Khảo sát
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								    <button class="dropdown-item" type="button">Xem thông tin thông báo</button>
+								    <button class="dropdown-item" type="button">Xem lịch học tập</button>
+								    <button class="dropdown-item" type="button">Xem TKB lớp khác</button>
+								    <button class="dropdown-item" type="button">Học và kỳ thi lần này</button>
+								  </div>
+								</div>
+							</nav>
+							<!-- --------------------------------------------------------BODY--------------- -->
+							<div class="container-fluid float-left">
+								<hr>
+								<p class="h5 text-danger">Cố vấn học tập: Trương Thị Hoài An SĐT: 0916547579</p>
+								<br>
+								<table class="border table"border = '1'>
+								  <thead class="" style="background: #025215">
+								    <tr>
+								      <th scope="col" clas="text-white"></th>
+								      <th scope="col" clas="text-white">Thứ 2</th>
+								      <th scope="col" clas="text-white">Thứ 3</th>
+								      <th scope="col" clas="text-white">Thứ 4</th>
+								      <th scope="col" clas="text-white">Thứ 5</th>
+								      <th scope="col" clas="text-white">Thứ 6</th>
+								      <th scope="col" clas="text-white">Thứ 7</th>
+								      <th scope="col" clas="text-white">Chủ Nhật</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <th scope="row">Buối Sáng</th>
+								      <td></td>
+								      <td>${schedule.sangThu3}</td>
+								      <td>${schedule.sangThu4}</td>
+								      <td>${schedule.sangThu5}</td>
+								      <td>${schedule.sangThu6}</td>
+								      <td>${schedule.sangThu7}</td>
+								      <td></td>
+								    </tr>
+								    <tr>
+								      <th scope="row">Buôi Chiều</th>
+								      <td>${schedule.chieuThu2}</td>
+								      <td>${schedule.chieuThu3}</td>
+								      <td>${schedule.chieuThu4}</td>
+								      <td>${schedule.chieuThu5}</td>
+								      <td>${schedule.chieuThu6}</td>
+								      <td>${schedule.chieuThu7}</td>
+								      <td></td>
+								    </tr>
+								  </tbody>
+								</table>
+							</div>
+						
+							<footer class="footer fixed-bottom  navbar-border" >
+								<a class="btn text-white" style="width: 100%" href="#">Ngay lúc này, em cần nhà trường hỗ trợ về việc gì nào?</a>
+							</footer>	
+
+						</div>`
+					);
+				});
+				
 				$("#thongTinCaNhan").click(function(){
 					debugger;
 					
@@ -371,8 +521,16 @@ function checkUsername(argument) {
 				         	month:month,
 				         	year:year
 				         }
-				         messages.push(message);
-				         localStorage.setItem("localStorageMessage", JSON.stringify(messages));
+				         if (message!=null) {
+				         	// statement
+				         	messages.push(message);
+				        	localStorage.setItem("localStorageMessage", JSON.stringify(messages));
+				        	alert('Gửi tin nhắn thành công')
+				         } else {
+				         	// statement
+				         	alert('Gửi tin nhắn không thành công')
+				         }
+				       
 				         
 					});
 				})
